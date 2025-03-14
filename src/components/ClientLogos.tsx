@@ -17,7 +17,7 @@ const brands = [
 
 const ClientLogos = () => {
   return (
-    <section className="py-8 bg-gray-100 dark:bg-gray-800/30 backdrop-blur-sm border-y border-border/30">
+    <section className="py-8 bg-black/80 dark:bg-black/90 border-y border-border/30">
       <div className="container mx-auto">
         <p className="text-center text-sm text-muted-foreground mb-6">
           Trusted by industry leaders
@@ -29,7 +29,7 @@ const ClientLogos = () => {
                 key={`${brand.id}-${index}`}
                 className="flex-shrink-0 mx-8 flex items-center justify-center h-12 w-28"
               >
-                <div className="flex items-center justify-center w-full h-full rounded-md text-xl font-bold text-gray-400 dark:text-gray-500">
+                <div className="flex items-center justify-center w-full h-full rounded-md text-xl font-bold text-gray-300 dark:text-gray-400">
                   {brand.logo}
                 </div>
               </div>
