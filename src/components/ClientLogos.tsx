@@ -29,7 +29,7 @@ const ClientLogos = () => {
                 key={`${brand.id}-${index}`}
                 className="flex-shrink-0 mx-8 flex items-center justify-center h-12 w-28"
               >
-                <div className="flex items-center justify-center w-full h-full bg-white/80 dark:bg-gray-700/50 rounded-md text-xl font-bold text-primary/70 shadow-sm">
+                <div className="flex items-center justify-center w-full h-full rounded-md text-xl font-bold text-gray-400 dark:text-gray-500">
                   {brand.logo}
                 </div>
               </div>
