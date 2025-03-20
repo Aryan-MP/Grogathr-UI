@@ -20,9 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Montserrat', 'sans-serif'],
-				serif: ['Playfair Display', 'serif'],
+				sans: ['Archivo', 'sans-serif'],
+				display: ['Space Grotesk', 'sans-serif'],
+				serif: ['Cormorant Garamond', 'serif'],
+				mono: ['JetBrains Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -69,11 +70,12 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 brand: {
-                    primary: '#9370DB', // Medium Purple
-                    accent: '#00CED1', // Dark Turquoise
-                    tertiary: '#F2A6A6', // Light Coral
-                    dark: '#161A24', // Dark Slate
-                    light: '#F5F7FA', // Off White
+                    primary: '#FF7E5F', // Vivid Coral
+                    secondary: '#FEB47B', // Peach
+                    accent: '#00F5A0', // Mint Green
+                    dark: '#0F172A', // Deep Navy
+                    light: '#F8FAFC', // Bright Off-White
+                    neutral: '#64748B', // Slate Gray
                 }
 			},
 			borderRadius: {
@@ -135,6 +137,22 @@ export default {
                     '100%': {
                         transform: 'rotate(360deg)'
                     }
+                },
+                'float': {
+                    '0%, 100%': {
+                        transform: 'translateY(0)'
+                    },
+                    '50%': {
+                        transform: 'translateY(-10px)'
+                    }
+                },
+                'shine': {
+                    '0%': {
+                        backgroundPosition: '200% 0'
+                    },
+                    '100%': {
+                        backgroundPosition: '-200% 0'
+                    }
                 }
 			},
 			animation: {
@@ -143,7 +161,9 @@ export default {
                 'fade-in': 'fade-in 0.5s ease-out forwards',
                 'slide-up': 'slide-up 0.7s ease-out forwards',
                 'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-                'rotate-slow': 'rotate-slow 12s linear infinite'
+                'rotate-slow': 'rotate-slow 12s linear infinite',
+                'float': 'float 6s ease-in-out infinite',
+                'shine': 'shine 8s linear infinite'
 			}
 		}
 	},

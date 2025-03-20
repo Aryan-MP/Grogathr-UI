@@ -22,10 +22,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/90 backdrop-blur-lg border-b border-white/5' : 'py-5 bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-background/80 backdrop-blur-lg border-b border-white/5' : 'py-5 bg-transparent'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <span className="text-2xl font-bold font-serif gradient-text">GROGATHR</span>
+          <span className="text-xl font-bold font-mono uppercase tracking-widest accent-gradient-text">GROGATHR</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -35,7 +35,7 @@ const Navbar = () => {
           <a href="#work" className="nav-link">Work</a>
           <a href="#contact" className="nav-link">Contact</a>
           <ThemeToggle />
-          <Button className="bg-gradient-to-r from-brand-primary to-brand-accent hover:shadow-glow hover:shadow-brand-primary/30">
+          <Button className="bg-brand-primary/90 text-white hover:bg-brand-primary font-mono text-xs uppercase tracking-widest">
             Get Started
           </Button>
         </nav>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <a href="#about" className="nav-link text-lg" onClick={toggleMenu}>About</a>
             <a href="#work" className="nav-link text-lg" onClick={toggleMenu}>Work</a>
             <a href="#contact" className="nav-link text-lg" onClick={toggleMenu}>Contact</a>
-            <Button className="mt-2 w-full bg-gradient-to-r from-brand-primary to-brand-accent hover:shadow-glow hover:shadow-brand-primary/30">
+            <Button className="mt-2 w-full bg-brand-primary/90 text-white hover:bg-brand-primary font-mono text-xs uppercase tracking-widest">
               Get Started
             </Button>
           </nav>

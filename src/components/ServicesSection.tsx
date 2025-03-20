@@ -10,7 +10,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
@@ -55,21 +55,21 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-24 relative">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/50 pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background pointer-events-none -z-10"></div>
       <div className="absolute left-0 top-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
       
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center justify-center p-1 px-3 mb-4 border rounded-full glassmorphism">
+          <Badge variant="outline" className="font-mono uppercase tracking-widest mb-4 py-2 px-4 bg-white/5 backdrop-blur-sm border-brand-accent/20">
             <Sparkles className="h-4 w-4 mr-2 text-brand-accent" />
-            <span className="text-sm font-medium">Our Services</span>
-          </div>
+            <span>Our Services</span>
+          </Badge>
           
           <h2 className="text-3xl md:text-5xl font-bold font-serif mb-6">
             End-to-End <span className="gradient-text">Branding Solutions</span>
           </h2>
           
-          <p className="text-foreground/70 text-lg">
+          <p className="text-foreground/70 text-lg font-display">
             We offer comprehensive branding services to help you stand out in a competitive market. 
             From initial concept to full market presence, we've got you covered.
           </p>
@@ -77,14 +77,14 @@ const ServicesSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="neo-card animate-slide-up" style={{animationDelay: `${service.delay}ms`}}>
-              <div className="relative z-10 p-6">
+            <div key={index} className="neo-card animate-slide-up glowing-border" style={{animationDelay: `${service.delay}ms`}}>
+              <div className="relative z-10 p-8">
                 <div className="h-14 w-14 rounded-lg bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 glassmorphism flex items-center justify-center mb-6">
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <h3 className="text-xl font-bold font-display mb-2">{service.title}</h3>
                 <p className="text-foreground/70 mb-6">{service.description}</p>
-                <Button variant="ghost" className="p-0 flex items-center text-brand-accent">
+                <Button variant="ghost" className="p-0 flex items-center text-brand-accent font-mono text-xs uppercase tracking-widest hover:text-brand-accent/80">
                   Learn more <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>

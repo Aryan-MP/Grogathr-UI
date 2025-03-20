@@ -1,5 +1,6 @@
 
 import { CheckCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const features = [
   "Creative excellence in every project",
@@ -13,20 +14,20 @@ const features = [
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background pointer-events-none -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/10 to-background pointer-events-none -z-10"></div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
-            <div className="inline-flex items-center justify-center p-1 px-3 mb-4 border rounded-full glassmorphism">
-              <span className="text-sm font-medium">About Us</span>
-            </div>
+            <Badge variant="outline" className="font-mono uppercase tracking-widest mb-4 py-2 px-4 bg-white/5 backdrop-blur-sm border-brand-primary/20">
+              <span>About Us</span>
+            </Badge>
             
             <h2 className="text-3xl md:text-5xl font-bold font-serif mb-8">
               We Are <span className="gradient-text">GROGATHR</span>
             </h2>
             
-            <p className="text-foreground/70 mb-6 text-lg">
+            <p className="text-foreground/70 mb-6 text-lg font-display">
               At Grogathr, we believe that exceptional branding is the cornerstone of business success. 
               Our team of creative professionals is passionate about crafting unique visual identities 
               that resonate with audiences and drive meaningful results.
@@ -40,18 +41,18 @@ const AboutSection = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start glassmorphism p-3 rounded-lg">
+                <div key={index} className="flex items-start glassmorphism p-3 rounded-lg border border-white/5 hover:border-brand-accent/20 transition-colors">
                   <CheckCircle className="h-5 w-5 text-brand-accent mr-2 mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
+                  <span className="text-sm">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
           
           <div className="order-1 md:order-2 relative">
-            <div className="relative mx-auto w-4/5 aspect-square">
+            <div className="relative mx-auto w-4/5 aspect-square animate-float">
               {/* Decorative elements */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-brand-primary/30 to-brand-accent/20 rounded-full blur-3xl"></div>
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-brand-primary/20 to-brand-accent/10 rounded-full blur-3xl"></div>
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border border-white/10 rounded-full animate-pulse-glow"></div>
               <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 border border-white/10 rounded-full animate-pulse-glow [animation-delay:1s]"></div>
               
@@ -59,7 +60,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-40 h-40 flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-primary to-brand-accent opacity-20 rounded-xl blur-xl"></div>
-                  <div className="relative z-10 glassmorphism rounded-xl w-full h-full flex items-center justify-center border border-white/10">
+                  <div className="relative z-10 glassmorphism rounded-xl w-full h-full flex items-center justify-center border border-white/10 glowing-border">
                     <span className="text-8xl font-bold font-serif gradient-text">G</span>
                   </div>
                 </div>
