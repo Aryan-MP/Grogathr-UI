@@ -20,10 +20,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Montserrat', 'sans-serif'],
-				display: ['Syne', 'sans-serif'],
-				heading: ['Dela Gothic One', 'cursive'],
-				mono: ['Martian Mono', 'monospace'],
+				sans: ['Space Grotesk', 'sans-serif'],
+				display: ['Cormorant Garamond', 'serif'],
+				heading: ['Archivo', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -59,23 +59,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
                 brand: {
-                    primary: '#A88BFA', // Rich Purple
-                    secondary: '#F8B4C2', // Soft Pink
-                    accent: '#7FFFD4', // Aquamarine
-                    dark: '#111827', // Deep Navy
-                    light: '#F9FAFB', // Clean White
-                    neutral: '#4B5563', // Slate Gray
+                    primary: '#FF7E5F', // Coral
+                    secondary: '#FEB47B', // Peach
+                    accent: '#00F5A0', // Mint
+                    dark: '#0D0F17', // Near Black
+                    light: '#FFFFFF', // White
+                    neutral: '#4F5B76', // Slate Blue
                 }
 			},
 			borderRadius: {
@@ -131,6 +121,16 @@ export default {
                         opacity: '1',
                         transform: 'scale(1)'
                     }
+                },
+                'glow-pulse': {
+                    '0%, 100%': {
+                        opacity: '1',
+                        filter: 'brightness(1)'
+                    },
+                    '50%': {
+                        opacity: '0.8',
+                        filter: 'brightness(1.2)'
+                    }
                 }
 			},
 			animation: {
@@ -140,6 +140,7 @@ export default {
                 'slide-up': 'slide-up 0.8s ease-out forwards',
                 'slide-in': 'slide-in 0.8s ease-out forwards',
                 'scale-in': 'scale-in 0.6s ease-out forwards',
+                'glow-pulse': 'glow-pulse 3s ease-in-out infinite'
 			}
 		}
 	},

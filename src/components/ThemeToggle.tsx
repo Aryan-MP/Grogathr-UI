@@ -27,16 +27,31 @@ export function ThemeToggle() {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const toggleTheme = () => {
+    setThemeState(theme === "dark" ? "light" : "dark");
+    
+    // Add transition class temporarily for smooth color transitions
+    document.documentElement.classList.add('transition-colors');
+    document.documentElement.style.setProperty('transition-duration', '500ms');
+    
+    // Remove the transition class after the transition is complete
+    setTimeout(() => {
+      document.documentElement.classList.remove('transition-colors');
+      document.documentElement.style.removeProperty('transition-duration');
+    }, 500);
+  };
+
   return (
     <Button
       variant="ghost"
       size="icon"
-      onClick={() => setThemeState(theme === "dark" ? "light" : "dark")}
+      onClick={toggleTheme}
+      className="glassmorphism rounded-full animate-glow-pulse"
     >
       {theme === "dark" ? (
-        <Sun className="h-5 w-5" />
+        <Sun className="h-5 w-5 text-amber-300" />
       ) : (
-        <Moon className="h-5 w-5" />
+        <Moon className="h-5 w-5 text-indigo-500" />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>
