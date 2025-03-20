@@ -19,9 +19,9 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-background/95">
       <Navbar />
-      <main>
+      <main className="flex-grow">
         <HeroSection />
         <ClientLogos />
         <ServicesSection />
