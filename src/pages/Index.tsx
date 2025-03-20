@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ClientLogos from "@/components/ClientLogos";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
 import WorkSection from "@/components/WorkSection";
@@ -19,11 +18,11 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-background/95">
+    <div className="min-h-screen flex flex-col bg-background noise-bg">
+      <div className="fixed inset-0 bg-gradient-to-b from-brand-primary/10 to-brand-accent/5 opacity-30 pointer-events-none z-0"></div>
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow relative z-10">
         <HeroSection />
-        <ClientLogos />
         <ServicesSection />
         <AboutSection />
         <WorkSection />

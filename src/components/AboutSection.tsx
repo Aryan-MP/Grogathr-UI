@@ -12,28 +12,36 @@ const features = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-secondary/5">
+    <section id="about" className="py-24 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background pointer-events-none -z-10"></div>
+      
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold font-display mb-6">
+            <div className="inline-flex items-center justify-center p-1 px-3 mb-4 border rounded-full glassmorphism">
+              <span className="text-sm font-medium">About Us</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-8">
               We Are <span className="gradient-text">GROGATHR</span>
             </h2>
-            <p className="text-foreground/70 mb-6">
+            
+            <p className="text-foreground/70 mb-6 text-lg">
               At Grogathr, we believe that exceptional branding is the cornerstone of business success. 
               Our team of creative professionals is passionate about crafting unique visual identities 
               that resonate with audiences and drive meaningful results.
             </p>
-            <p className="text-foreground/70 mb-8">
+            
+            <p className="text-foreground/70 mb-10">
               With years of industry experience, we've mastered the art of blending creativity with strategy. 
               Our comprehensive approach ensures that every element of your brand works together 
               harmoniously to tell your story and connect with your customers.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                <div key={index} className="flex items-start glassmorphism p-3 rounded-lg">
+                  <CheckCircle className="h-5 w-5 text-brand-accent mr-2 mt-0.5 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -41,13 +49,26 @@ const AboutSection = () => {
           </div>
           
           <div className="order-1 md:order-2 relative">
-            <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 p-1">
-              <div className="h-full w-full rounded-lg bg-secondary/10 flex items-center justify-center">
-                <div className="text-6xl font-bold font-display gradient-text">G</div>
+            <div className="relative mx-auto w-4/5 aspect-square">
+              {/* Decorative elements */}
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-brand-primary/30 to-brand-accent/20 rounded-full blur-3xl"></div>
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border border-white/10 rounded-full animate-pulse-glow"></div>
+              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 border border-white/10 rounded-full animate-pulse-glow [animation-delay:1s]"></div>
+              
+              {/* Main logo element */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-40 h-40 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-brand-primary to-brand-accent opacity-20 rounded-xl blur-xl"></div>
+                  <div className="relative z-10 glassmorphism rounded-xl w-full h-full flex items-center justify-center border border-white/10">
+                    <span className="text-8xl font-bold font-serif gradient-text">G</span>
+                  </div>
+                </div>
               </div>
+              
+              {/* Floating elements */}
+              <div className="absolute top-10 right-10 w-20 h-20 glassmorphism rounded-lg blur-sm animate-pulse-glow opacity-40"></div>
+              <div className="absolute bottom-10 left-10 w-16 h-16 glassmorphism rounded-full blur-sm animate-pulse-glow [animation-delay:2s] opacity-40"></div>
             </div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/30 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/30 rounded-full blur-3xl -z-10" />
           </div>
         </div>
       </div>
