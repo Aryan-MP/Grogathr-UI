@@ -103,7 +103,7 @@
   
   .glowing-border::before {
     content: "";
-    @apply absolute inset-0 rounded-inherit;
+    @apply absolute inset-0 rounded-2xl;
     background: linear-gradient(90deg, #FF7E5F, #FEB47B, #00F5A0, #FF7E5F);
     background-size: 400% 100%;
     animation: shine 8s linear infinite;
