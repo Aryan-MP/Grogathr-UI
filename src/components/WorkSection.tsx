@@ -1,81 +1,83 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
     id: 1,
-    title: "Zenith Apparel",
-    category: "Branding & Web Design",
-    bgClass: "from-brand-primary/20 to-transparent",
+    title: "Ethereal Cosmetics",
+    category: "Brand Identity & Packaging",
+    color: "from-brand-primary/20 to-transparent",
     delay: 100,
   },
   {
     id: 2,
-    title: "Nourish Kitchen",
-    category: "Identity & Packaging",
-    bgClass: "from-brand-accent/20 to-transparent",
+    title: "Vanguard Finance",
+    category: "Digital Experience & Marketing",
+    color: "from-brand-secondary/20 to-transparent",
     delay: 200,
   },
   {
     id: 3,
-    title: "Elevate Fitness",
-    category: "Marketing Campaign",
-    bgClass: "from-brand-secondary/20 to-transparent",
+    title: "Luminary Wellness",
+    category: "Brand Strategy & Identity",
+    color: "from-brand-accent/20 to-transparent",
     delay: 300,
   },
   {
     id: 4,
-    title: "Urban Retreat",
-    category: "Photography & Video",
-    bgClass: "from-brand-primary/20 via-brand-accent/10 to-transparent",
+    title: "Horizon Technology",
+    category: "Web Design & Content Creation",
+    color: "from-brand-primary/20 via-brand-accent/10 to-transparent",
     delay: 400,
   },
 ];
 
 const WorkSection = () => {
   return (
-    <section id="work" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-secondary/10 pointer-events-none -z-10"></div>
+    <section id="work" className="py-32 relative">
+      <div className="absolute inset-0 noise-subtle opacity-20 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-primary/5 to-transparent -z-10"></div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <Badge variant="outline" className="font-mono uppercase tracking-widest mb-4 py-2 px-4 bg-white/5 backdrop-blur-sm border-brand-primary/20">
-              <span>Portfolio</span>
-            </Badge>
+            <div className="inline-flex items-center premium-blur rounded-full px-4 py-1.5 text-xs font-mono tracking-widest uppercase text-brand-primary/90 mb-6">
+              Our Work
+            </div>
             
-            <h2 className="text-3xl md:text-5xl font-bold font-serif mb-6">
-              Our <span className="gradient-text">Latest Work</span>
+            <h2 className="text-4xl md:text-5xl font-heading mb-6 leading-tight">
+              Featured <span className="primary-gradient-text">Projects</span>
             </h2>
             
-            <p className="text-foreground/70 max-w-2xl font-display">
-              Explore our portfolio of successful projects where creativity meets strategy
-              to deliver exceptional brand experiences and business results.
+            <p className="text-foreground/70 max-w-2xl font-light">
+              Discover our portfolio of transformative brand experiences that have 
+              helped businesses achieve their goals and connect with their audiences.
             </p>
           </div>
           
-          <Button variant="outline" className="mt-8 md:mt-0 glassmorphism hover:bg-white/10 font-mono uppercase tracking-widest text-xs">
-            View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+          <Button variant="outline" className="mt-8 md:mt-0 rounded-full bg-transparent hover:bg-white/5 border border-white/10 px-6 font-display text-sm">
+            <span>All Projects</span>
+            <ArrowUpRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div 
               key={project.id} 
-              className="neo-card h-80 flex flex-col justify-end animate-slide-up glowing-border overflow-hidden"
+              className="luxury-card h-[500px] flex flex-col justify-end group overflow-hidden premium-border animate-slide-up"
               style={{animationDelay: `${project.delay}ms`}}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.bgClass} opacity-40`}></div>
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-50 group-hover:opacity-70 transition-opacity duration-500`}></div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
               
-              <div className="relative z-10 p-8">
-                <span className="text-xs text-foreground/60 block mb-2 font-mono uppercase tracking-widest">{project.category}</span>
-                <h3 className="text-2xl font-bold font-serif mb-6">{project.title}</h3>
-                <Button variant="ghost" className="p-0 flex items-center text-foreground hover:text-brand-accent font-mono uppercase tracking-widest text-xs">
-                  View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="relative z-10 p-8 md:p-10">
+                <div className="premium-blur rounded-full px-4 py-1 text-xs inline-block mb-3 font-mono tracking-widest uppercase">{project.category}</div>
+                <h3 className="text-3xl font-display font-medium mb-8 group-hover:text-brand-primary transition-colors duration-300">{project.title}</h3>
+                <Button variant="outline" className="rounded-full bg-white/5 hover:bg-white/10 border border-white/10 px-6 font-display text-sm group-hover:bg-brand-primary/20 transition-all duration-300">
+                  View Case Study
+                  <ArrowUpRight className="ml-2 h-4 w-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>
               </div>
             </div>

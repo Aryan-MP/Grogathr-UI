@@ -18,8 +18,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background noise-bg">
-      <div className="fixed inset-0 bg-gradient-to-b from-brand-primary/5 via-secondary/10 to-brand-accent/5 opacity-30 pointer-events-none z-0"></div>
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* Subtle noise texture */}
+      <div className="fixed inset-0 noise-subtle opacity-30 pointer-events-none z-0"></div>
+      
+      {/* Grid pattern */}
+      <div className="fixed inset-0 grid-pattern opacity-10 pointer-events-none z-0"></div>
+      
       <Navbar />
       <main className="flex-grow relative z-10">
         <HeroSection />

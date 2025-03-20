@@ -1,95 +1,108 @@
 
 import { 
-  Palette, 
-  Layout, 
-  Camera, 
-  Video, 
+  Wand2, 
   Globe, 
+  Compass, 
+  Camera, 
   Megaphone, 
-  Sparkles,
-  ArrowRight
+  PenTool,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 const services = [
   {
-    title: "Logo & Identity",
-    description: "Distinctive logo design and visual identity systems that embody your brand essence.",
-    icon: Palette,
+    title: "Brand Strategy",
+    description: "Strategic positioning and narrative development that sets you apart from competitors.",
+    icon: Compass,
+    color: "from-brand-primary/20 to-brand-primary/5",
     delay: 100,
   },
   {
-    title: "Web Design",
-    description: "Stunning, functional websites that engage visitors and drive conversions.",
-    icon: Layout,
+    title: "Identity Design",
+    description: "Distinctive visual identities that embody your brand's essence and values.",
+    icon: PenTool,
+    color: "from-brand-secondary/20 to-brand-secondary/5",
     delay: 200,
   },
   {
-    title: "Photography",
-    description: "Professional product and lifestyle photography that showcases your offerings.",
-    icon: Camera,
+    title: "Digital Experience",
+    description: "Immersive websites and digital platforms that engage and convert.",
+    icon: Globe,
+    color: "from-brand-accent/20 to-brand-accent/5",
     delay: 300,
   },
   {
-    title: "Video Production",
-    description: "Captivating video content from commercials to social media reels.",
-    icon: Video,
+    title: "Creative Direction",
+    description: "Cohesive visual storytelling across all brand touchpoints.",
+    icon: Wand2,
+    color: "from-brand-primary/20 to-brand-primary/5",
     delay: 400,
   },
   {
-    title: "Digital Marketing",
-    description: "Data-driven campaigns that increase visibility and engagement.",
-    icon: Globe,
+    title: "Content Creation",
+    description: "Compelling photography, video, and graphics that elevate your narrative.",
+    icon: Camera,
+    color: "from-brand-secondary/20 to-brand-secondary/5",
     delay: 500,
   },
   {
-    title: "Social Media",
-    description: "Strategic social presence that builds community and drives brand awareness.",
+    title: "Marketing Strategy",
+    description: "Data-driven campaigns that increase visibility and drive engagement.",
     icon: Megaphone,
+    color: "from-brand-accent/20 to-brand-accent/5",
     delay: 600,
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-32 relative">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background pointer-events-none -z-10"></div>
-      <div className="absolute left-0 top-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
+      <div className="absolute inset-0 -z-10 noise-subtle opacity-20"></div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-brand-primary/5 to-transparent"></div>
       
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <Badge variant="outline" className="font-mono uppercase tracking-widest mb-4 py-2 px-4 bg-white/5 backdrop-blur-sm border-brand-accent/20">
-            <Sparkles className="h-4 w-4 mr-2 text-brand-accent" />
-            <span>Our Services</span>
-          </Badge>
-          
-          <h2 className="text-3xl md:text-5xl font-bold font-serif mb-6">
-            End-to-End <span className="gradient-text">Branding Solutions</span>
-          </h2>
-          
-          <p className="text-foreground/70 text-lg font-display">
-            We offer comprehensive branding services to help you stand out in a competitive market. 
-            From initial concept to full market presence, we've got you covered.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="neo-card animate-slide-up glowing-border" style={{animationDelay: `${service.delay}ms`}}>
-              <div className="relative z-10 p-8">
-                <div className="h-14 w-14 rounded-lg bg-gradient-to-br from-brand-primary/20 to-brand-accent/20 glassmorphism flex items-center justify-center mb-6">
-                  <service.icon className="h-7 w-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold font-display mb-2">{service.title}</h3>
-                <p className="text-foreground/70 mb-6">{service.description}</p>
-                <Button variant="ghost" className="p-0 flex items-center text-brand-accent font-mono text-xs uppercase tracking-widest hover:text-brand-accent/80">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row gap-16 md:gap-24 mb-20">
+          <div className="md:w-1/3">
+            <div className="sticky top-32">
+              <div className="inline-flex items-center premium-blur rounded-full px-4 py-1.5 text-xs font-mono tracking-widest uppercase text-brand-primary/90 mb-6">
+                Our Expertise
               </div>
+              
+              <h2 className="text-4xl md:text-5xl font-heading mb-6 leading-tight">
+                Comprehensive <span className="primary-gradient-text">Brand Solutions</span>
+              </h2>
+              
+              <p className="text-foreground/70 mb-8 font-light">
+                We offer end-to-end branding services, crafting memorable experiences that resonate with your audience and drive business growth.
+              </p>
+              
+              <Button className="rounded-full bg-transparent hover:bg-white/5 border border-white/10 text-foreground flex items-center gap-2 px-6 font-display text-sm">
+                <span>All Services</span>
+                <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
+              </Button>
             </div>
-          ))}
+          </div>
+          
+          <div className="md:w-2/3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {services.map((service, index) => (
+                <div 
+                  key={index} 
+                  className="luxury-card hover:shadow-ambient transition-all duration-500 group"
+                  style={{animationDelay: `${service.delay}ms`}}
+                >
+                  <div className="relative z-10 p-8">
+                    <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${service.color} premium-blur flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                      <service.icon className="h-7 w-7 text-foreground" />
+                    </div>
+                    <h3 className="text-xl font-display font-medium mb-3 group-hover:text-brand-primary transition-colors">{service.title}</h3>
+                    <p className="text-foreground/70 font-light">{service.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
